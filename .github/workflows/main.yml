@@ -1,0 +1,23 @@
+name: Self-Hosted Runner Workflow
+
+on:
+  pull_request:
+    branches:
+      - satish
+
+jobs:
+  pull-request-job:
+    runs-on: self-hosted 
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref:${{github.head_ref}}
+      #- name: Print Hostname
+       # run: hostname
+
+      #  run: ls -la
+
+     # - name: Run a Sample Script
+      #  run: echo "Hello from Self-Hosted Runner!"

@@ -1,0 +1,22 @@
+name: Build on satish branch changes
+
+on:
+  push:
+    branches:
+      - satish
+  pull_request:
+    branches:
+      - satish
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Build Commands
+        run: |
+          echo "Build triggered due to changes in the satish branch"
+          # Add your actual build steps here
